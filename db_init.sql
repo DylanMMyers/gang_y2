@@ -2,33 +2,24 @@ CREATE TABLE orders (
     orderID INT PRIMARY KEY, 
     orderDate DATE,
     orderTime TIME,
-    price FLOAT,
+    orderCost INT
 );
 
 
-CREATE TABLE orderDetails (
-    
+CREATE TABLE orderItems (
+    orderDetailID int PRIMARY KEY
     orderID int,
     itemID int,
-    quantity int,
+    itemPrice,
     FOREIGN KEY (orderID) REFERENCES orders(orderID),
-    FOREIGN KEY (itemID) REFERENCES menu_items(itemID)
+    FOREIGN KEY (itemID) REFERENCES menuItems(itemID)
     
 );
 
-CREATE TABLE menu_items (
+CREATE TABLE menuItems (
     itemID INT PRIMARY KEY,
     name VARCHAR(255),
     description VARCHAR(255),
     price FLOAT,
     calories INT
 );
-
-COPY (SELECT orderID, orderDate, orderTime, orderItems, price FROM orders)
-TO 'orders_output.csv'
-WITH CSV HEADER;
-
-
-COPY (SELECT name, description, price, calories FROM menu_items)
-TO 'menu_output.csv'
-WITH CSV HEADER;

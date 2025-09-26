@@ -1,0 +1,2 @@
+def write(table, path):
+    
