@@ -11,6 +11,7 @@ try:
 except ImportError:
     try:
         #platform independent, uses python interpreter to execute install command
+        #python -m pip install psycopg2-binary
         subprocess.check_call([sys.executable, "-m", "pip", "install", "psycopg2-binary"])
         import psycopg2
     except Exception as e:
