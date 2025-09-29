@@ -1,0 +1,5 @@
+Go to the repository on github
+Open settings and then manage access (or it may be called Collaborators and teams)
+Click add people and enter the github username or email of the person to add
+Select a role such as write to allow pushing branches, or maintain or admin for higher permissions
+Click add to grant the access
