@@ -1,20 +1,20 @@
 CREATE TABLE orders (
-    orderID INT SERIAL PRIMARY KEY, 
+    orderID SERIAL PRIMARY KEY, 
     orderDate DATE,
     orderTime TIME,
     orderCost INT
 );
 
 CREATE TABLE menuItems (
-    itemID INT SERIAL PRIMARY KEY,
+    itemID SERIAL PRIMARY KEY,
     name VARCHAR(255),
     description VARCHAR(255),
     price FLOAT,
     calories INT
 );
 
-CREATE TABLE orderItems (
-    orderDetailID INT SERIAL PRIMARY KEY,
+CREATE TABLE orderItems (   
+    orderDetailID SERIAL PRIMARY KEY,
     orderID INT,
     itemID INT,
     itemPrice FLOAT,
@@ -31,7 +31,7 @@ CREATE TABLE inventory (
 );
 
 CREATE TABLE employees (
-    employeeID int SERIAL PRIMARY KEY,
+    employeeID SERIAL PRIMARY KEY,
     name varchar(255),
     username varchar (255),
     password varchar (255)
