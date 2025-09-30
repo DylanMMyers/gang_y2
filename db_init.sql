@@ -34,7 +34,7 @@ CREATE TABLE employees (
     employeeID int PRIMARY KEY,
     name varchar(255),
     username varchar (255),
-    password varchar9255),
+    password varchar9255,
 );
     
     
