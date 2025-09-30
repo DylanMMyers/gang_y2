@@ -57,3 +57,5 @@ def write(table="", csv_path="", login_info_path = "login_info.json"):
             except psycopg2.Error as e:
                 sys.stderr.write(f"Error copying the table: {e}\n")
                 raise
+            
+write("orders", "./weird.csv")
