@@ -35,8 +35,6 @@ CREATE TABLE employees (
     name varchar(255),
     username varchar (255),
     password varchar9255),
-    wage float,
-    hours float
 );
     
     
