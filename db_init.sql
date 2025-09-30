@@ -5,15 +5,13 @@ CREATE TABLE orders (
     orderCost INT
 );
 
-
 CREATE TABLE orderItems (
-    orderDetailID int PRIMARY KEY
-    orderID int,
-    itemID int,
-    itemPrice,
+    orderDetailID INT PRIMARY KEY,
+    orderID INT,
+    itemID INT,
+    itemPrice FLOAT,
     FOREIGN KEY (orderID) REFERENCES orders(orderID),
     FOREIGN KEY (itemID) REFERENCES menuItems(itemID)
-    
 );
 
 CREATE TABLE menuItems (
