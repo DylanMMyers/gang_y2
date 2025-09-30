@@ -21,3 +21,23 @@ CREATE TABLE orderItems (
     FOREIGN KEY (orderID) REFERENCES orders(orderID),
     FOREIGN KEY (itemID) REFERENCES menuItems(itemID)
 );
+
+CREATE TABLE inventory (
+    ingredient varchar(255) PRIMARY KEY,
+    ingredientStatus int, 
+    amountRemaining int,
+    dateNext DATE,
+    dateLast DATE
+);
+
+CREATE TABLE employees (
+    employeeID int PRIMARY KEY,
+    name varchar(255),
+    username varchar (255),
+    password varchar9255),
+    wage float,
+    hours float
+);
+    
+    
+    
