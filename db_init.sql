@@ -1,3 +1,7 @@
+CREATE TYPE iceLevel AS ENUM ('none', 'low', 'medium', 'high');
+CREATE TYPE sugarLevel AS ENUM ('none', 'low', 'medium', 'high');
+CREATE TYPE bobaLevel AS ENUM ('Pearl', 'Mini Pearl', 'Crystal Boba', 'Pudding', 'Aloe Vera', 'Red Bean', 'Herb Jelly', 'Aiyu Jelly', 'Lychee Jelly', 'Crema', 'Ice Cream');
+
 CREATE TABLE orders (
     orderID SERIAL PRIMARY KEY, 
     orderDate DATE,
@@ -17,6 +21,9 @@ CREATE TABLE orderItems (
     orderDetailID SERIAL PRIMARY KEY,
     orderID INT,
     itemID INT,
+    iceLevel STRING,
+    sugarLevel STRING,
+    toppings STRING,
     itemPrice FLOAT,
     FOREIGN KEY (orderID) REFERENCES orders(orderID),
     FOREIGN KEY (itemID) REFERENCES menuItems(itemID)
