@@ -1,6 +1,6 @@
-CREATE TYPE ICELEVEL AS ENUM ('none', 'low', 'medium', 'high');
-CREATE TYPE SUGARLEVEL AS ENUM ('none', 'low', 'medium', 'high');
-CREATE TYPE TOPPINGS AS ENUM ('Pearl', 'Mini Pearl', 'Crystal Boba', 'Pudding', 'Aloe Vera', 'Red Bean', 'Herb Jelly', 'Aiyu Jelly', 'Lychee Jelly', 'Crema', 'Ice Cream');
+CREATE TYPE iceLevelEnum AS ENUM ('none', 'low', 'medium', 'high');
+CREATE TYPE sugarLevelEnum AS ENUM ('none', 'low', 'medium', 'high');
+CREATE TYPE toppingsEnum AS ENUM ('Pearl', 'Mini Pearl', 'Crystal Boba', 'Pudding', 'Aloe Vera', 'Red Bean', 'Herb Jelly', 'Aiyu Jelly', 'Lychee Jelly', 'Crema', 'Ice Cream');
 
 CREATE TABLE orders (
     orderID SERIAL PRIMARY KEY, 
@@ -21,9 +21,9 @@ CREATE TABLE orderItems (
     orderDetailID SERIAL PRIMARY KEY,
     orderID INT,
     itemID INT,
-    iceLevel ICELEVEL,
-    sugarLevel SUGARLEVEL,
-    toppings TOPPINGS,
+    iceLevel iceLevelEnum,
+    sugarLevel sugarLevelEnum,
+    toppings toppingsEnum,
     itemPrice DECIMAL(6, 2),
     FOREIGN KEY (orderID) REFERENCES orders(orderID),
     FOREIGN KEY (itemID) REFERENCES menuItems(itemID)

@@ -22,7 +22,7 @@ for i in range(0, rows):
         sixty = "0" + sixty
     new_date = str(random.randint(2025, 2025)) + '-' + twelve + '-' + thirty
     new_time = twelve + ':' + sixty + ':' + sixty
-    rand_data.append([new_date, new_time, str(random.randint(1, 20))])
+    rand_data.append([new_date, new_time, str(random.randint(1, 20)) + '.' + str(random.randint(0, 9)) + str(random.randint(0, 9))])
 
 rand_data.sort()
 
