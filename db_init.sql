@@ -31,10 +31,12 @@ CREATE TABLE orderItems (
 
 CREATE TABLE inventory (
     inventoryItem varchar(255) PRIMARY KEY,
+    itemID INT,
     itemStatus int, 
     amountRemaining int,
     dateNext DATE,
     dateLast DATE
+    FOREIGN KEY (itemID) REFERENCES menuItems(itemID)
 );
 
 CREATE TABLE employees (
