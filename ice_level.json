@@ -1,0 +1,12 @@
+{
+    "iceID": [
+        1,
+        2,
+        3
+    ],
+    "name": [
+        "Regular Ice",
+        "Less Ice",
+        "No Ice"
+    ]
+}
