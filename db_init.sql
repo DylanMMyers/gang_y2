@@ -1,6 +1,6 @@
 CREATE TYPE iceLevel AS ENUM ('none', 'low', 'medium', 'high');
 CREATE TYPE sugarLevel AS ENUM ('none', 'low', 'medium', 'high');
-CREATE TYPE bobaLevel AS ENUM ('Pearl', 'Mini Pearl', 'Crystal Boba', 'Pudding', 'Aloe Vera', 'Red Bean', 'Herb Jelly', 'Aiyu Jelly', 'Lychee Jelly', 'Crema', 'Ice Cream');
+CREATE TYPE toppings AS ENUM ('Pearl', 'Mini Pearl', 'Crystal Boba', 'Pudding', 'Aloe Vera', 'Red Bean', 'Herb Jelly', 'Aiyu Jelly', 'Lychee Jelly', 'Crema', 'Ice Cream');
 
 CREATE TABLE orders (
     orderID SERIAL PRIMARY KEY, 
