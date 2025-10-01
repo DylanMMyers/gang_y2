@@ -20,8 +20,7 @@ INSERT INTO inventory (inventoryItem, itemStatus, amountRemaining, dateNext, dat
 -- Consumables & supplies part of inventory
 ('Napkins', 1, 5000, '2025-10-30', '2025-09-20'),
 ('Plastic Cups 16oz', 1, 2000, '2025-10-25', '2025-09-21'),
-('Plastic Cups 22oz', 1, 1500, '2025-10-25', '2025-09-21'),
 ('Cup Lids', 1, 3000, '2025-10-25', '2025-09-21'),
-('Straws (Regular)', 1, 5000, '2025-10-25', '2025-09-21'),
-('Straws (Large)', 1, 4000, '2025-10-25', '2025-09-21'),
+('Straws', 1, 5000, '2025-10-25', '2025-09-21'),
+
 
