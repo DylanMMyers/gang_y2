@@ -1,16 +1,16 @@
 CREATE TABLE orders (
     orderID INT PRIMARY KEY, 
-    orderDate DATE,
-    orderTime TIME,
-    orderCost INT
+    orderDate DATE NOT NULL,
+    orderTime TIME NOT NULL,
+    orderCost DECIMAL(6,2) NOT NULL
 );
 
 
 CREATE TABLE orderItems (
-    orderDetailID int PRIMARY KEY
-    orderID int,
-    itemID int,
-    itemPrice,
+    orderDetailID INT PRIMARY KEY,
+    orderID INT NOT NULL,
+    itemID INT NOT NULL,
+    itemPrice DECIMAL(3,2) NOT NULL,
     FOREIGN KEY (orderID) REFERENCES orders(orderID),
     FOREIGN KEY (itemID) REFERENCES menuItems(itemID)
     
@@ -18,8 +18,8 @@ CREATE TABLE orderItems (
 
 CREATE TABLE menuItems (
     itemID INT PRIMARY KEY,
-    name VARCHAR(255),
+    name VARCHAR(255) NOT NULL,
     description VARCHAR(255),
-    price FLOAT,
+    price DECIMAL(3,2) NOT NULL,
     calories INT
 );
