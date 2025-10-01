@@ -30,8 +30,8 @@ CREATE TABLE orderItems (
 );
 
 CREATE TABLE inventory (
-    ingredient varchar(255) PRIMARY KEY,
-    ingredientStatus int, 
+    inventoryItem varchar(255) PRIMARY KEY,
+    itemStatus int, 
     amountRemaining int,
     dateNext DATE,
     dateLast DATE
