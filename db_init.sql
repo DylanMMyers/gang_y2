@@ -2,7 +2,7 @@ CREATE TABLE orders (
     orderID SERIAL PRIMARY KEY, 
     orderDate DATE,
     orderTime TIME,
-    orderCost INT
+    orderCost DECIMAL(6, 2)
 );
 
 CREATE TABLE menuItems (
