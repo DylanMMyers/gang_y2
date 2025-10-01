@@ -31,12 +31,10 @@ CREATE TABLE orderItems (
 
 CREATE TABLE inventory (
     inventoryItem varchar(255) PRIMARY KEY,
-    itemID INT,
     itemStatus int, 
     amountRemaining int,
     dateNext DATE,
     dateLast DATE
-    FOREIGN KEY (itemID) REFERENCES menuItems(itemID)
 );
 
 CREATE TABLE employees (
@@ -44,6 +42,15 @@ CREATE TABLE employees (
     name varchar(255),
     username varchar (255),
     password varchar (255)
+);
+
+CREATE TABLE menuItemInventory (
+  itemID INT,
+  inventoryItem VARCHAR(255),
+  qtyPerDrink DECIMAL(6,2),
+  FOREIGN KEY (itemID) REFERENCES menuItems(itemID),
+  FOREIGN KEY (inventoryItem) REFERENCES inventory(inventoryItem),
+  PRIMARY KEY (itemID, inventoryItem)
 );
     
     
