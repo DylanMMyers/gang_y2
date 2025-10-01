@@ -1,6 +1,6 @@
-CREATE TYPE iceLevel AS ENUM ('none', 'low', 'medium', 'high');
-CREATE TYPE sugarLevel AS ENUM ('none', 'low', 'medium', 'high');
-CREATE TYPE toppings AS ENUM ('Pearl', 'Mini Pearl', 'Crystal Boba', 'Pudding', 'Aloe Vera', 'Red Bean', 'Herb Jelly', 'Aiyu Jelly', 'Lychee Jelly', 'Crema', 'Ice Cream');
+CREATE TYPE ICELEVEL AS ENUM ('none', 'low', 'medium', 'high');
+CREATE TYPE SUGARLEVEL AS ENUM ('none', 'low', 'medium', 'high');
+CREATE TYPE TOPPINGS AS ENUM ('Pearl', 'Mini Pearl', 'Crystal Boba', 'Pudding', 'Aloe Vera', 'Red Bean', 'Herb Jelly', 'Aiyu Jelly', 'Lychee Jelly', 'Crema', 'Ice Cream');
 
 CREATE TABLE orders (
     orderID SERIAL PRIMARY KEY, 
@@ -13,7 +13,7 @@ CREATE TABLE menuItems (
     itemID SERIAL PRIMARY KEY,
     name VARCHAR(255),
     description VARCHAR(255),
-    price FLOAT,
+    price DECIMAL(6, 2),
     calories INT
 );
 
@@ -21,10 +21,10 @@ CREATE TABLE orderItems (
     orderDetailID SERIAL PRIMARY KEY,
     orderID INT,
     itemID INT,
-    iceLevel STRING,
-    sugarLevel STRING,
-    toppings STRING,
-    itemPrice FLOAT,
+    iceLevel ICELEVEL,
+    sugarLevel SUGARLEVEL,
+    toppings TOPPINGS,
+    itemPrice DECIMAL(6, 2),
     FOREIGN KEY (orderID) REFERENCES orders(orderID),
     FOREIGN KEY (itemID) REFERENCES menuItems(itemID)
 );
