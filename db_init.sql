@@ -2,14 +2,14 @@ CREATE TYPE iceLevelEnum AS ENUM ('none', 'low', 'medium', 'high');
 CREATE TYPE sugarLevelEnum AS ENUM ('none', 'low', 'medium', 'high');
 CREATE TYPE toppingsEnum AS ENUM ('none', 'Pearl', 'Mini Pearl', 'Crystal Boba', 'Pudding', 'Aloe Vera', 'Red Bean', 'Herb Jelly', 'Aiyu Jelly', 'Lychee Jelly', 'Crema', 'Ice Cream');
 
-CREATE TABLE orders (
+CREATE TABLE IF NOT EXISTS orders (
     orderID SERIAL PRIMARY KEY, 
     orderDate DATE,
     orderTime TIME,
     orderCost DECIMAL(6, 2)
 );
 
-CREATE TABLE menuItems (
+CREATE TABLE IF NOT EXISTS menuItems (
     itemID SERIAL PRIMARY KEY,
     name VARCHAR(255),
     description VARCHAR(255),
@@ -17,7 +17,7 @@ CREATE TABLE menuItems (
     calories INT
 );
 
-CREATE TABLE orderItems (   
+CREATE TABLE IF NOT EXISTS orderItems (   
     orderDetailID SERIAL PRIMARY KEY,
     orderID INT,
     itemID INT,
@@ -29,7 +29,7 @@ CREATE TABLE orderItems (
     FOREIGN KEY (itemID) REFERENCES menuItems(itemID)
 );
 
-CREATE TABLE inventory (
+CREATE TABLE IF NOT EXISTS inventory (
     inventoryItem varchar(255) PRIMARY KEY,
     itemStatus int, 
     amountRemaining int,
@@ -37,14 +37,14 @@ CREATE TABLE inventory (
     dateLast DATE
 );
 
-CREATE TABLE employees (
+CREATE TABLE IF NOT EXISTS employees (
     employeeID SERIAL PRIMARY KEY,
     name varchar(255),
     username varchar (255),
     password varchar (255)
 );
 
-CREATE TABLE menuItemInventory (
+CREATE TABLE IF NOT EXISTS menuItemInventory (
   itemID INT,
   inventoryItem VARCHAR(255),
   qtyPerDrink DECIMAL(6,2),
