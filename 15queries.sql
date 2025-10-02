@@ -59,7 +59,7 @@ LIMIT 5;
 --#6 Low inventory check
 SELECT inventory.inventoryItem, inventory.amountRemaining, inventory.dateNext
 FROM inventory
-WHERE inventory.amountRemaining < 200
+WHERE inventory.amountRemaining < 1000
 ORDER BY inventory.amountRemaining ASC;
 
 
