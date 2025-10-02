@@ -58,4 +58,4 @@ def write(table="", csv_path="", login_info_path = "login_info.json"):
                 sys.stderr.write(f"Error copying the table: {e}\n")
                 raise
             
-write("orders", "./gen_1.csv")
+write("orders", "./gen_3.csv")

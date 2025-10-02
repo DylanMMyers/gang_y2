@@ -2,19 +2,48 @@ import random
 import csv
 
 # change this to get diff rows and names
-rows = 1000
-name = 2
-offset = 1100
+rows = 1000000
+name = 3
+offset = 0
 path = f"gen_{str(name)}.csv"
 
 rand_data = []
 
 for i in range(0, rows):
+    twelve = str(random.randint(1, 12)) 
+    if len(twelve) == 1:
+        twelve = "0" + twelve
+    thirty = str(random.randint(0, 28))
+    if len(thirty) == 1:
+        thirty = "0" + thirty
+    sixty = str(random.randint(0, 59))
+    if len(sixty) == 1:
+        sixty = "0" + sixty
+    new_date = str(random.randint(2025, 2025)) + '-' + twelve + '-' + thirty
+    new_time = twelve + ':' + sixty + ':' + sixty
+    rand_data.append([new_date, new_time, str(random.randint(1, 20)) + '.' + str(random.randint(0, 9)) + str(random.randint(0, 9))])
+
+for i in range(0, 22000):
+    twelve = "08"
     # twelve = str(random.randint(1, 12)) 
     # if len(twelve) == 1:
     #     twelve = "0" + twelve
-    twelve = "09"
-    thirty = str(random.randint(15, 22))
+    thirty = str(random.randint(26, 27))
+    if len(thirty) == 1:
+        thirty = "0" + thirty
+    sixty = str(random.randint(0, 59))
+    if len(sixty) == 1:
+        sixty = "0" + sixty
+    new_date = str(random.randint(2025, 2025)) + '-' + twelve + '-' + thirty
+    new_time = twelve + ':' + sixty + ':' + sixty
+    rand_data.append([new_date, new_time, str(random.randint(1, 20)) + '.' + str(random.randint(0, 9)) + str(random.randint(0, 9))])
+
+for i in range(0, 22000):
+    twelve = "12"
+    # twelve = str(random.randint(1, 12)) 
+    # if len(twelve) == 1:
+    #     twelve = "0" + twelve
+    thirty = str(random.randint(1, 2))
     if len(thirty) == 1:
         thirty = "0" + thirty
     sixty = str(random.randint(0, 59))
