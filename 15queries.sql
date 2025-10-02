@@ -42,3 +42,51 @@ INNER JOIN menuItemInventory
        ON menuItems.itemID = menuItemInventory.itemID
 GROUP BY menuItems.itemID, menuItems.name
 ORDER BY menuItems.itemID;
+
+
+--#5  Top 5 best-sellers
+SELECT 
+    menuItems.itemID, 
+    menuItems.name, 
+    COUNT(orderItems.orderID) AS total_orders
+FROM menuItems
+JOIN orderItems
+    ON menuItems.itemID = orderItems.itemID
+GROUP BY menuItems.itemID, menuItems.name
+ORDER BY total_orders DESC
+LIMIT 5;
+
+--#6 Low inventory check
+SELECT inventory.inventoryItem, inventory.amountRemaining, inventory.dateNext
+FROM inventory
+WHERE inventory.amountRemaining < 200
+ORDER BY inventory.amountRemaining ASC;
+
+
+--#7 Most popular ingredient by recipe amount
+SELECT inventory.inventoryItem, COUNT(menuItemInventory.itemID) AS menu_items_used_in
+FROM inventory
+JOIN menuItemInventory
+    ON inventory.inventoryItem = menuItemInventory.inventoryItem
+GROUP BY inventory.inventoryItem
+ORDER BY menu_items_used_in DESC;
+
+--8# most popular toppings
+SELECT 
+  orderItems.toppings AS topping,
+  COUNT(*) AS times_selected
+FROM orderItems
+WHERE orderItems.toppings IS NOT NULL
+GROUP BY orderItems.toppings
+ORDER BY times_selected DESC, topping;
+
+
+--#9  list menu items by calories
+SELECT 
+    menuItems.itemID,
+    menuItems.name,
+    menuItems.calories
+FROM menuItems
+ORDER BY menuItems.calories DESC;
+
+
