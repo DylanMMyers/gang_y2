@@ -143,6 +143,6 @@ for i in range(0, rows):
     curr_item = [i + 1, i + 1, itemID[rand_idx], icelevel[ice], sugarlevel[sugar], toppings[top], price[rand_idx]]
     rand_data.append(curr_item)
     
-with open(path, 'w', newline='') as csvfile:
+with open(path, 'w', newline='') as csvfile:    
     writer = csv.writer(csvfile)
     writer.writerows(rand_data)
